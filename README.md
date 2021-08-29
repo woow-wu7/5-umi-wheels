@@ -24,7 +24,6 @@ $ yarn start
     -  比如：config/routes.ts
 - 优先级
   - .umirc.ts  >  config/config.js
-
 #### (2) runtime config
 - runtimeConfig 和 config 的区别是，runtimeConfig跑在浏览器端
 - 按照惯例，`src/app.tsx` 为运行时配置
