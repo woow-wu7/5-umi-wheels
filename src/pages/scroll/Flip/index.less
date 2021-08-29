@@ -1,0 +1,42 @@
+.base {
+  height: 160px;
+  line-height: 160px;
+  margin: 0;
+  padding: 0;
+}
+
+.Cols {
+  // background: red;
+  .base();
+  overflow: hidden;
+
+  .colContentDown {
+    transform: translateY(0);
+    filter: blur();
+    animation: down 1s ease-in-out 0s 1 none;
+    .colItem {
+      .base();
+    }
+  }
+
+  .colContentUp {
+    transform: translateY(-90%);
+    filter: blur();
+    animation: up 1s ease-in-out 0s 1 none;
+    .colItem {
+      .base();
+    }
+  }
+}
+
+@keyframes up {
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes down {
+  to {
+    transform: translateY(-90%);
+  }
+}
