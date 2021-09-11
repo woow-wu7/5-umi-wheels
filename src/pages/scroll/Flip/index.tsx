@@ -8,7 +8,7 @@ import {
 import styles from './index.less';
 
 interface NumberScrollProps {
-  data: number;
+  data?: number;
 }
 
 const Flip: React.FC<NumberScrollProps> = (props) => {
@@ -38,7 +38,9 @@ const Flip: React.FC<NumberScrollProps> = (props) => {
   };
 
   const renderButton = () => (
-    <div style={{marginTop: '30px', display: 'flex', justifyContent: 'center'}}>
+    <div
+      style={{ marginTop: '30px', display: 'flex', justifyContent: 'center' }}
+    >
       <Button onClick={() => setCount((prev) => prev + 1)}>run</Button>
     </div>
   );

@@ -8,6 +8,7 @@ import { BaseMenuProps } from '_@ant-design_pro-layout@6.24.3@@ant-design/pro-la
 
 interface LayoutProps extends BasicLayoutProps {
   logout: () => void;
+  ErrorComponent: (error: Error) => React.ReactElement<any>;
 }
 
 // layout
@@ -22,9 +23,17 @@ export const layout = ({
 }): LayoutProps => {
   return {
     ...initialState?.settings,
-    menuHeaderRender,
+    title: 'umi-数字滚动',
+    navTheme: 'light', // 'light' | 'dark'
+    layout: 'mix', // 'side' | 'top' | 'mix'
+    headerTheme: 'light', // 顶部导航的主题，mix 模式生效
+    fixSiderbar: true,
+    locale: 'zh-CN',
+    // loading: true,
+    // menuHeaderRender, // 渲染logo和title，这里我们已经指定了title和layout='mix'，所以顶部已经有了和menuHeader类似的组件效果
     menuItemRender,
     logout,
+    ErrorComponent,
   };
 };
 
@@ -58,3 +67,5 @@ const menuItemRender: BaseMenuProps['menuItemRender'] = (
 const logout = () => {
   console.log('Log out successfully');
 };
+
+const ErrorComponent = (error: Error) => <p>发生错误: {error}</p>;
