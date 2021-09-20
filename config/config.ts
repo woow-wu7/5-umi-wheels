@@ -17,7 +17,14 @@ export default defineConfig({
   // - 构建时配置：这里就是构建时配置 config/config.js -> layout
   // - 运行时配置：运行时配置，需要在 src/app.tsx -> layout
   // - 官方说明：https://umijs.org/zh-CN/plugins/plugin-layout
-  layout,
+  layout: {
+    title: 'umi-数字滚动',
+    navTheme: 'light', // 'light' | 'dark'
+    layout: 'mix', // 'side' | 'top' | 'mix'
+    headerTheme: 'light', // 顶部导航的主题，mix 模式生效
+    fixSiderbar: true,
+    locale: 'zh-CN',
+  },
   routes,
   antd: {
     // 开启插件 plugin - antd
