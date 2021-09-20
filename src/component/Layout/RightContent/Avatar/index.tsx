@@ -42,7 +42,11 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
     <HeaderDropdown overlay={menuHeaderDropdown}>
       <span className={`${styles.action} ${styles.account}`}>
         <Avatar
-          style={{ backgroundColor: '#1890ff', marginRight: '10px' }}
+          style={{
+            backgroundColor: '#1890ff',
+            marginRight: '10px',
+            cursor: 'pointer',
+          }}
           icon={<AntDesignOutlined />}
           size="small"
         />
