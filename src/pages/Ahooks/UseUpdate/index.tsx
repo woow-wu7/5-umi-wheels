@@ -1,23 +1,23 @@
 import { Button } from 'antd';
-import { useUpdate } from '@/utils/useUpdate';
+import { useUpdate } from '@/utils/hooks';
 import { PageContainer } from '@ant-design/pro-layout';
 import styles from './index.less';
 
-export default function IndexPage() {
+export default function UseUpdate() {
   return (
     <PageContainer
       header={{
-        title: 'update',
+        title: 'useUpdate',
         ghost: true,
         breadcrumb: {
           routes: [
             {
               path: '',
-              breadcrumbName: '首页',
+              breadcrumbName: 'a-hooks',
             },
             {
               path: '',
-              breadcrumbName: 'update',
+              breadcrumbName: 'useUpdate',
             },
           ],
         },

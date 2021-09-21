@@ -1,2 +1,9 @@
-export * from './useUpdate'
-export * from './useUpdateEffect'
+export * from './hooks';
+
+export const cardContent = () => [
+  ['更新：更新了部分ui渲染和逻辑处理', 'yellow'],
+  ['修复：修复了页面重复渲染的bug', 'red'],
+  ['更新内容 33333333333333333'],
+  ['更新内容 44444444444444444'],
+  ['更新内容 55555555555555555'],
+];
