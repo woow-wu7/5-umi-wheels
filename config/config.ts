@@ -31,4 +31,9 @@ export default defineConfig({
     dark: false,
     // compact: true, // 紧凑模式
   },
+  devServer: {
+    port: 7777,
+    host: '0.0.0.0',
+    open: true
+  }
 });

@@ -20,6 +20,11 @@ export default [
         name: 'useInterval',
         component: '@/pages/Ahooks/UseInterval',
       },
+      {
+        path: 'useEventTarget',
+        name: 'useEventTarget',
+        component: '@/pages/Ahooks/useEventTarget',
+      },
     ],
   },
   {
