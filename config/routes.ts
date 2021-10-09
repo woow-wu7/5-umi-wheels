@@ -25,6 +25,11 @@ export default [
         name: 'useEventTarget',
         component: '@/pages/Ahooks/useEventTarget',
       },
+      {
+        path: 'useHover',
+        name: 'useHover',
+        component: '@/pages/Ahooks/useHover',
+      },
     ],
   },
   {
