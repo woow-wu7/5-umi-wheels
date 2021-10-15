@@ -2,6 +2,13 @@
 
 export default [
   {
+    path: '/login',
+    name: 'login',
+    component: '@/pages/Login',
+    layout: false,
+    hideInMenu: true,
+  },
+  {
     path: '/a-hooks',
     name: 'a-hooks',
     routes: [
@@ -37,5 +44,6 @@ export default [
     name: '数字滚动',
     component: '@/pages/Scroll',
     target: '_blank',
+    access: 'canViewNumber',
   }, // 之前在这里配置路由没有生效，原因是存在 .umirc.ts 和 config/config.js 两个文件配置不一样，并且 .umirc.ts 优先级别计较高
 ];

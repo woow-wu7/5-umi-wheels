@@ -21,9 +21,7 @@ interface LayoutProps extends BasicLayoutProps {
 export const layout = ({
   // 运行时配置
   initialState,
-}: {
-  initialState: { settings?: LayoutSettings };
-}): LayoutProps => {
+}: any): LayoutProps => {
   return {
     rightContentRender, // 包含了 logout
     menuItemRender,

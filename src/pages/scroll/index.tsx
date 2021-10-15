@@ -1,7 +1,11 @@
 import { PageContainer } from '@ant-design/pro-layout';
+import { useModel } from 'umi';
 import Flip from './Flip';
 
 const Scroll = () => {
+  // const { user } = useModel('user', model => ({ user: model.user }));
+  const { user } = useModel('user');
+  console.log(`user`, user);
   return (
     <PageContainer
       header={{
