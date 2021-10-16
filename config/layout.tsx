@@ -3,7 +3,6 @@ import {
   BasicLayoutProps,
   Settings as LayoutSettings,
 } from '@ant-design/pro-layout';
-
 import {
   rightContentRender,
   menuItemRender,
@@ -22,6 +21,19 @@ export const layout = ({
   // 运行时配置
   initialState,
 }: any): LayoutProps => {
+  const authLogin = () => {
+    const isLoginPath = window.location.pathname === '/login';
+    const hasToken =
+      initialState?.token ||
+      JSON.parse(window.localStorage.getItem('user') || '{}')?.token;
+
+    if (!hasToken && !isLoginPath) {
+      console.log(`全局初始state`, initialState);
+      window.location.pathname = '/login';
+    }
+  };
+
+  authLogin();
   return {
     rightContentRender, // 包含了 logout
     menuItemRender,

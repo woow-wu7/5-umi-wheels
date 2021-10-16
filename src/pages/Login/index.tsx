@@ -1,6 +1,7 @@
 import React from 'react';
 import { Form, Input, Checkbox, Button } from 'antd';
 import { useModel, history } from 'umi';
+import { login } from '@/services/login';
 
 interface LoginProps {}
 
@@ -8,11 +9,18 @@ const Login: React.FC<LoginProps> = (props) => {
   const { setInitialState } = useModel('@@initialState');
 
   const onFinish = (values: any) => {
-    console.log('Success:', values);
-    setInitialState({
+    const user = {
       name: 'woow_wu7',
-    });
-    history.push('/number');
+      token: 'Bearer ADF',
+    };
+
+    login(values)
+      .then((res) => {
+        setInitialState(user);
+        window.localStorage.setItem('user', JSON.stringify(user));
+        history.push('/a-hooks/useUpdate');
+      })
+      .catch((err) => console.log(`err`, err));
   };
 
   const onFinishFailed = (errorInfo: any) => {

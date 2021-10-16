@@ -34,6 +34,13 @@ export default defineConfig({
   devServer: {
     port: 7777,
     host: '0.0.0.0',
-    open: true
-  }
+    open: true,
+  },
+  proxy: {
+    '/api': {
+      target: 'https://cdn.seovx.com',
+      changeOrigin: true,
+      pathRewrite: { '^/api': '' },
+    },
+  },
 });
